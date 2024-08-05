@@ -1,5 +1,6 @@
 package edu.cjc.main.sma.model;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -18,6 +19,7 @@ public class Student {
 	private String batchNumber;
 	private String batchMode;
 	private String feesPaid;
+	@Column(unique = true)
 	private String username;
 	private String password;
 	public int getStudentId() {

@@ -1,5 +1,7 @@
 package edu.cjc.main.sma.serviceimpl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -20,6 +22,11 @@ public class StudentServiceImpl implements StudentServiceI
 	public Student loginStudent(String username, String password) {
 		
 		return sr.findByUsernameAndPassword(username, password);
+	}
+	@Override
+	public List<Student> getAllStudents() {
+		
+		return sr.findAll();
 	}
 
 	

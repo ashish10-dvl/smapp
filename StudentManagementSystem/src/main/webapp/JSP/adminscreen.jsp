@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -54,7 +55,8 @@ form {
 				</a>
 			</div>
 		</nav>
-		<section class="vh-100 gradient-custom enroll mt-2" class="enroll" id="enroll">
+		<section class="vh-100 gradient-custom enroll mt-2" class="enroll"
+			id="enroll">
 			<div class="container h-100">
 				<div class="row justify-content-center h-100 w-75">
 					<div class="col-12 col-lg-9 col-xl-7">
@@ -140,7 +142,7 @@ form {
 										<div class="col">
 											<select class="select form-control-sm" name="batchNumber">
 												<option value="#" disabled>Select Batch Number</option>
-												
+
 												<option value="FDJ-164">FDJ-164</option>
 												<option value="REG-164">REG-164</option>
 												<option value="FDJ-165">FDJ-165</option>
@@ -149,17 +151,15 @@ form {
 										</div>
 										<div class="col-md-6 mb-2">
 											<div class="form-outline">
-												<input type="text" 
-													class="form-control form-control-sm" name="username" />
-												<label class="form-label" >Student
+												<input type="text" class="form-control form-control-sm"
+													name="username" /> <label class="form-label">Student
 													Username</label>
 											</div>
 										</div>
 										<div class="col-md-6 mb-2">
 											<div class="form-outline">
-												<input type="password" 
-													class="form-control form-control-sm" name="password" />
-												<label class="form-label" >Student
+												<input type="password" class="form-control form-control-sm"
+													name="password" /> <label class="form-label">Student
 													Password</label>
 											</div>
 										</div>
@@ -177,9 +177,53 @@ form {
 		</section>
 		<section class="view" style="height: 530px" id="view">
 			<h1>View Student</h1>
-			<table class="table table-bordered">
+			<section class="view" style="height: 530px" id="view">
+				<h1 class="text-center">Student Details..!</h1>
+				<table class="table table-hover" style="font-size: small">
+					<thead>
+						<tr>
+							<th>ID</th>
+							<th>Student Name</th>
+							<th>Student Email</th>
+							<th>Age</th>
+							<th>Collage Name</th>
+							<th>Course Name</th>
+							<th>Bath No</th>
+							<th>Mode</th>
+							<th>Fess Recived</th>
+							<th>Actions</th>
+						</tr>
+					</thead>
+					<tbody>
+						<c:forEach items="${data}" var="s">
+							<tr>
+								<td>${s.studentId}</td>
+								<td>${s.studentFullName}</td>
+								<td>${s.studentEmail}</td>
+								<td>${s.studentAge}</td>
+								<td>${s.studentCollegeName}</td>
+								<td>${s.studentCourse}</td>
+								<td>${s.batchNumber}</td>
+								<td>${s.batchMode}</td>
+								<td>${s.feesPaid}</td>
+								<td>
+									<div class="btn-group btn-group-sm" role="group"
+										aria-label="...">
+										<button class="btn btn-outline-success">PayFees</button>
+										<button class="btn btn-outline-primary">ShiftBatch</button>
+										<button class="btn btn-outline-danger">Remove</button>
 
-			</table>
+									</div>
+
+								</td>
+
+							</tr>
+						</c:forEach>
+
+					</tbody>
+
+				</table>
+			</section>
 		</section>
 	</div>
 
