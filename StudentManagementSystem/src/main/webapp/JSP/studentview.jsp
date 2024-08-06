@@ -30,7 +30,7 @@
 				<th>Student Name</th>
 				<th>Student Email</th>
 				<th>Age</th>
-				<th>Collage Name</th>
+				<th>College Name</th>
 				<th>Course Name</th>
 				<th>Bath No</th>
 				<th>Mode</th>
