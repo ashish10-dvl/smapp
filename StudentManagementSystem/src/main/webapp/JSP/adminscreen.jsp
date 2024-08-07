@@ -47,7 +47,11 @@ function batch() {
 	document.fn.action="/batch";
 	document.fn.submit();
 }
-
+function remove()
+{
+document.fn.action="/remove"
+document.action.submit();
+}
 </script>
 
 </head>

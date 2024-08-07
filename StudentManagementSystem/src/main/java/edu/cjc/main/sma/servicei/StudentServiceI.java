@@ -20,4 +20,8 @@ public interface StudentServiceI {
 
 	void updateStudentBatch(int studentid, String batchNumber);
 
+	void removeStudent(int studentId);
+
+	
+
 }

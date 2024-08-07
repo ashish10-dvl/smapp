@@ -1,6 +1,7 @@
 package edu.cjc.main.sma.serviceimpl;
 
 import java.util.List;
+
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -58,6 +59,16 @@ public class StudentServiceImpl implements StudentServiceI
 		sr.save(s);
 		
 	}
+	@Override
+	public void removeStudent(int studentId) {
+		Optional<Student> op=sr.removeBystudentId(studentId);
+		
+		Student s=op.get();
+		sr.delete(s);
+		
+		
+	}
+	
 
 	
 }

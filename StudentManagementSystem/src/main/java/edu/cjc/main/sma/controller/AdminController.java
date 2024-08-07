@@ -102,4 +102,13 @@ public class AdminController {
 		m.addAttribute("data", students);
 		return "adminscreen";
 	}
+	
+	@RequestMapping("/remove")
+	public String removeStudent(@RequestParam int studentId,Model m) {
+		ssi.removeStudent(studentId);
+		List<Student> students=ssi.getAllStudents();
+		m.addAttribute("data", students);
+		
+		return "adminscreen";
+	}
 }
